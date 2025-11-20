@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://drywcs3rw1ut1"]
+
+[ext_resource type="Script" uid="uid://ccx7xikq1vxbh" path="res://scenes/MainScene/MainScene.gd" id="1_fupjk"]
+[ext_resource type="PackedScene" uid="uid://bhwcy1ky8dpis" path="res://scenes/Character/Character2D.tscn" id="2_y65c2"]
+[ext_resource type="Texture2D" uid="uid://c6aj8u7uv5euk" path="res://sprites/ground/green_grass.png" id="3_3cvap"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_fupjk")
+
+[node name="Character2D" parent="." instance=ExtResource("2_y65c2")]
+
+[node name="Camera2D" type="Camera2D" parent="Character2D"]
+position = Vector2(-6, -14)
+scale = Vector2(2, 2)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+follow_viewport_enabled = true
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(256, 256)
+repeat_times = 16
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/Parallax2D"]
+texture_repeat = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3cvap")
+stretch_mode = 3

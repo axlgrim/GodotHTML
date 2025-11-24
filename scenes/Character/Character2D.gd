@@ -4,6 +4,8 @@ class_name Character2D
 @export var move: float = 0;
 @export var move_speed: float = 250.0
 @export var bullet_scene: PackedScene     
+@export var health: int = 100
+
 @export var fire_cooldown := 0.15         
 
 @onready var char_sprite: Sprite2D = $CharSprite2D
@@ -11,8 +13,11 @@ class_name Character2D
 
 var roation_speed = 1.0
 
+var health_component: HealthComponent
+
 func _ready() -> void:
-	pass
+	health_component = HealthComponent.create(health)
+	Globals.player = self
 
 
 func _process(delta: float) -> void:

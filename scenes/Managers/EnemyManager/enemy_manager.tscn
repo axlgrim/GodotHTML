@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://t4rndbfnjrlo"]
+
+[ext_resource type="Script" uid="uid://0210e06hd6os" path="res://scenes/Managers/EnemyManager/enemy_manager.gd" id="1_4p733"]
+
+[node name="EnemyManager" type="Node"]
+script = ExtResource("1_4p733")
+enemy_scene_list = ["res://scenes/Enemies/enemy_base.tscn", "res://scenes/Enemies/enemy_base_new.tscn"]
+
+[node name="BaseEnemyTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="BaseEnemyTimer" to="." method="_on_base_enemy_timer_timeout"]

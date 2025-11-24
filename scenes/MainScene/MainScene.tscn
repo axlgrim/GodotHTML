@@ -1,19 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://drywcs3rw1ut1"]
+[gd_scene load_steps=7 format=3 uid="uid://drywcs3rw1ut1"]
 
 [ext_resource type="Script" uid="uid://ccx7xikq1vxbh" path="res://scenes/MainScene/MainScene.gd" id="1_fupjk"]
 [ext_resource type="PackedScene" uid="uid://bhwcy1ky8dpis" path="res://scenes/Character/Character2D.tscn" id="2_y65c2"]
 [ext_resource type="Texture2D" uid="uid://c6aj8u7uv5euk" path="res://sprites/ground/green_grass.png" id="3_3cvap"]
 [ext_resource type="PackedScene" uid="uid://bve5s2hpsgdkv" path="res://scenes/Enemies/enemy_base.tscn" id="4_y65c2"]
 [ext_resource type="PackedScene" uid="uid://bg37ibp46t7l1" path="res://scenes/UI/player_UI/player_ui.tscn" id="5_3cvap"]
+[ext_resource type="PackedScene" uid="uid://t4rndbfnjrlo" path="res://scenes/Managers/EnemyManager/enemy_manager.tscn" id="6_spuhd"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_fupjk")
 
 [node name="Character2D" parent="." instance=ExtResource("2_y65c2")]
 position = Vector2(-305, -87)
-move = 0.0
-move_speed = 250.0
-fire_cooldown = 0.15
 
 [node name="Camera2D" type="Camera2D" parent="Character2D"]
 position = Vector2(-6, -14)
@@ -44,3 +42,5 @@ texture = ExtResource("3_3cvap")
 stretch_mode = 3
 
 [node name="Player_UI" parent="CanvasLayer" instance=ExtResource("5_3cvap")]
+
+[node name="EnemyManager" parent="." instance=ExtResource("6_spuhd")]

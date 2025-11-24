@@ -49,11 +49,9 @@ _data = {
 }
 
 [node name="Character2D" type="CharacterBody2D"]
+process_mode = 1
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2")
-move = null
-move_speed = null
-fire_cooldown = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
